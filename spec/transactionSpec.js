@@ -9,7 +9,6 @@ describe("transaction", function(){
   })
   it("Transaction should have a date", function(){
     trans = new Transaction('d', 50);
-    
     expect(trans.date).toEqual("29/1/2018");
   })
 });

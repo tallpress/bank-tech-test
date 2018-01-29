@@ -35,7 +35,22 @@ describe("bank", function(){
   });
 
   describe("transaction list", function(){
-    
-  })
+    var bank;
+
+    beforeEach(function() {
+      bank = new Bank();
+    });
+
+    it("should add a deposit transaction when depositing money", function() {
+      bank.deposit(50);
+      expect(bank.transactions[0].type).toEqual("Deposit");
+    });
+
+    it("should add a withdraw transaction when withdrawing money", function() {
+      var newBank = new Bank();
+      newBank.withdraw(25);
+      expect(newBank.transactions[0].type).toEqual("Withdrawal");
+    })
+  });
 
 });
