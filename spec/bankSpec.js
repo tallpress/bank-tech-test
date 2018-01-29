@@ -9,7 +9,7 @@ describe("bank", function(){
     })
 
     it("should return the current balance of the account when requested", function(){
-      expect(bank.showBalance()).toEqual(50);
+      expect(bank.showBalance()).toEqual("£50.00");
     })
   })
 

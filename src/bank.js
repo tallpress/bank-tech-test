@@ -1,12 +1,13 @@
 (function(exports){
   function Bank(){
-    this.balance = 50;
+    this.balance = parseFloat(50).toFixed(2);
+    this.printer = new Printer();
   }
 
-  
+
 
   Bank.prototype.showBalance = function() {
-    return this.balance;
+    return this.printer.printBalance(this.balance);
   }
 
   exports.Bank = Bank;
