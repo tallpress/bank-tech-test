@@ -12,7 +12,7 @@
   Bank.prototype.deposit = function(depositAmount) {
     var depositTrans = new Transaction('d', depositAmount);
     this.transactions.push(depositTrans);
-    this.balance += depositAmount;
+    this.calcBalance();
   }
 
   Bank.prototype.withdraw = function(withdrawAmount) {
@@ -21,9 +21,23 @@
     } else {
       var withdrawTrans = new Transaction('w', withdrawAmount);
       this.transactions.push(withdrawTrans);
-      this.balance -= withdrawAmount;
+      this.calcBalance();
     };
   };
 
+
+  Bank.prototype.calcBalance = function() {
+    for(var i = 0; i < this.transactions.length; i++) {
+      var transaction = this.transactions[i];
+      if (transaction.type == "Deposit") {
+        this.balance += transaction.amount;
+      } else if (transaction.type == "Withdrawal") {
+        this.balance -= transaction.amount;
+      }
+    }
+    return this.balance;
+  };
+
   exports.Bank = Bank;
+
 })(this);
