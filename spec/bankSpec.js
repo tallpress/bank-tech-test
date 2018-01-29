@@ -3,7 +3,7 @@ describe("bank", function(){
   describe("currentBalance", function(){
     var bank;
     beforeEach(function() {
-      bank = new Bank();
+      bank = new Bank(50);
     });
 
     it("should return the current balance of the account when requested", function(){
@@ -15,7 +15,7 @@ describe("bank", function(){
     var bank;
 
     beforeEach(function() {
-      bank = new Bank();
+      bank = new Bank(50);
     });
 
     it("should be able to deposit money", function(){
@@ -38,7 +38,7 @@ describe("bank", function(){
     var bank;
 
     beforeEach(function() {
-      bank = new Bank();
+      bank = new Bank(50);
     });
 
     it("should add a deposit transaction when depositing money", function() {
@@ -52,5 +52,4 @@ describe("bank", function(){
       expect(newBank.transactions[0].type).toEqual("Withdrawal");
     })
   });
-
 });

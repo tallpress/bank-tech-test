@@ -32,8 +32,4 @@ I would like to have dates next to the lines.
 As a user,
 So I don't loose track of my spending,
 I would like to be able to see my balance.
-
-As a user,
-So I that i can eat,
-I would like to be able to apply for an overdraft.
 ```

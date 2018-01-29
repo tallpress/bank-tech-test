@@ -8,8 +8,9 @@ describe("transaction", function(){
     expect(trans.type).toEqual("Deposit");
   })
   it("Transaction should have a date", function(){
-    trans = new Transaction('d', 50);
-    expect(trans.date).toEqual("29/1/2018");
+    var date = "02/10/1997"
+    trans = new Transaction('d', 50, 600, date);
+    expect(trans.date).toEqual("02/10/1997");
   })
   it("should also have the avaliable balance", function(){
     trans = new Transaction('d', 50, 200);

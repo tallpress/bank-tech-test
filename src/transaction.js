@@ -1,8 +1,8 @@
 (function(exports){
-  function Transaction(type, amount, currentBalance) {
+  function Transaction(type, amount, currentBalance, date = getCurrentDate()) {
     this.type = whichType(type);
     this.amount = amount;
-    this.date = getCurrentDate();
+    this.date = date;
     this.currentBalance = currentBalance;
   }
 

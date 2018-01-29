@@ -1,6 +1,5 @@
 (function(exports){
   function Printer(){
-
   }
 
   function formatMoney(input) {
@@ -25,10 +24,8 @@
   }
 
   Printer.prototype.toConsole = function(toPrint) {
-    console.log(toPrint)
+    console.log(toPrint);
   };
-
-
 
   exports.Printer = Printer;
 })(this);

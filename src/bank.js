@@ -1,8 +1,9 @@
 (function(exports){
-  function Bank(){
-    this.balance = 50;
+  function Bank(initialBalance){
+    this.balance = initialBalance;
     this.printer = new Printer();
     this.transactions = [];
+    this.initialBalance = initialBalance;
   }
 
   Bank.prototype.showBalance = function() {
@@ -28,21 +29,9 @@
   };
 
   Bank.prototype.showStatement = function(){;
-    this.printer.toConsole(this.printer.printStatement(this.transactions));
+    var toPrint = this.printer.printStatement(this.transactions)
+    this.printer.toConsole(toPrint);
   }
-
-
-  // Bank.prototype.calcBalance = function() {
-  //   for(var i = 0; i < this.transactions.length; i++) {
-  //     var transaction = this.transactions[i];
-  //     if (transaction.type == "Deposit") {
-  //       this.balance += transaction.amount;
-  //     } else if (transaction.type == "Withdrawal") {
-  //       this.balance -= transaction.amount;
-  //     }
-  //   }
-  //   return this.balance;
-  // };
 
   exports.Bank = Bank;
 
