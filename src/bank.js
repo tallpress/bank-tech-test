@@ -3,6 +3,8 @@
     this.balance = 50;
   }
 
+  
+
   Bank.prototype.showBalance = function() {
     return this.balance;
   }
