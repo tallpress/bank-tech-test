@@ -12,7 +12,7 @@ describe("printer", function(){
       amount: 50,
       currentBalance: 100
     }];
-    
-    expect(printer.printStatement(exampleData)).toEqual('Date || Transaction type || Amount || Balance after \n20/01/2018 || Deposit || £50.00 || £100.00 \n');
+
+    expect(printer.formatStatement(exampleData)).toEqual('Date || Transaction type || Amount || Balance after \n20/01/2018 || Deposit || £50.00 || £100.00 \n');
   });
 });

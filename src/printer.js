@@ -14,7 +14,7 @@
     throw new Error("Insufficient funds");
   }
 
-  Printer.prototype.printStatement = function(transactions) {
+  Printer.prototype.formatStatement = function(transactions) {
     var toPrint = "Date || Transaction type || Amount || Balance after \n"
     for (var i = 0;  i < transactions.length; i++) {
       var currentTransaction = transactions[i];

@@ -29,7 +29,7 @@
   };
 
   Bank.prototype.showStatement = function(){;
-    var toPrint = this.printer.printStatement(this.transactions)
+    var toPrint = this.printer.formatStatement(this.transactions)
     this.printer.toConsole(toPrint);
   }
 
