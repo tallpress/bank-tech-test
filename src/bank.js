@@ -27,9 +27,8 @@
     };
   };
 
-  Bank.prototype.showStatement = function(){
+  Bank.prototype.showStatement = function(){;
     this.printer.toConsole(this.printer.printStatement(this.transactions));
-
   }
 
 

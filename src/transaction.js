@@ -6,7 +6,6 @@
     this.currentBalance = currentBalance;
   }
 
-  // want to make private
   function whichType(type) {
     if (type == "w") {
       return "Withdrawal";
@@ -15,7 +14,6 @@
     };
   };
 
-  // want to make private
   function getCurrentDate() {
     var today = new Date();
     var dd = today.getDate();
