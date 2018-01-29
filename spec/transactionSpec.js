@@ -11,4 +11,8 @@ describe("transaction", function(){
     trans = new Transaction('d', 50);
     expect(trans.date).toEqual("29/1/2018");
   })
+  it("should also have the avaliable balance", function(){
+    trans = new Transaction('d', 50, 200);
+    expect(trans.currentBalance).toEqual(200);
+  })
 });

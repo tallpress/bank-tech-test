@@ -10,33 +10,40 @@
   }
 
   Bank.prototype.deposit = function(depositAmount) {
-    var depositTrans = new Transaction('d', depositAmount);
+    this.balance += depositAmount;
+    var depositTrans = new Transaction('d', depositAmount, this.balance);
     this.transactions.push(depositTrans);
-    this.calcBalance();
+    // this.calcBalance();
   }
 
   Bank.prototype.withdraw = function(withdrawAmount) {
     if (this.balance - withdrawAmount < 0 ) {
       this.printer.insufficientFunds();
     } else {
-      var withdrawTrans = new Transaction('w', withdrawAmount);
+      this.balance -= withdrawAmount;
+      var withdrawTrans = new Transaction('w', withdrawAmount, this.balance);
       this.transactions.push(withdrawTrans);
-      this.calcBalance();
+      // this.calcBalance();
     };
   };
 
+  Bank.prototype.showStatement = function(){
+    this.printer.toConsole(this.printer.printStatement(this.transactions));
 
-  Bank.prototype.calcBalance = function() {
-    for(var i = 0; i < this.transactions.length; i++) {
-      var transaction = this.transactions[i];
-      if (transaction.type == "Deposit") {
-        this.balance += transaction.amount;
-      } else if (transaction.type == "Withdrawal") {
-        this.balance -= transaction.amount;
-      }
-    }
-    return this.balance;
-  };
+  }
+
+
+  // Bank.prototype.calcBalance = function() {
+  //   for(var i = 0; i < this.transactions.length; i++) {
+  //     var transaction = this.transactions[i];
+  //     if (transaction.type == "Deposit") {
+  //       this.balance += transaction.amount;
+  //     } else if (transaction.type == "Withdrawal") {
+  //       this.balance -= transaction.amount;
+  //     }
+  //   }
+  //   return this.balance;
+  // };
 
   exports.Bank = Bank;
 
