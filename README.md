@@ -12,10 +12,14 @@ I want to be able to input money into the bank.
 As a user,
 So that I don't loose my cash,
 I would like to be able to deposit money into the bank.
-As a user,
 
+As a user,
 So that I can have cash,
 I would like to be able to withdraw money from the bank.
+
+As a user,
+So that I can't go overdrawn,
+I would like to be notified if I can't withdrawn below my minimum amount.
 
 As a user,
 So that I can keep track of my spending,

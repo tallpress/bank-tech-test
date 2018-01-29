@@ -13,8 +13,12 @@
   }
 
   Bank.prototype.withdraw = function(withdrawAmount) {
-    this.balance -= withdrawAmount;
-  }
+    if (this.balance - withdrawAmount < 0 ) {
+      this.printer.insufficientFunds();
+    } else {
+      this.balance -= withdrawAmount;
+    };
+  };
 
   exports.Bank = Bank;
 })(this);
