@@ -2,6 +2,7 @@
   function Transaction(type, amount) {
     this.type = whichType(type);
     this.amount = amount;
+    this.date = getCurrentDate();
   }
 
   function whichType(type) {
@@ -11,6 +12,14 @@
       return "Deposit";
     };
   };
+
+  function getCurrentDate() {
+    var today = new Date();
+    var dd = today.getDate();
+    var mm = 1 + today.getMonth();
+    var yyyy = today.getFullYear();
+    return `${dd}/${mm}/${yyyy}`
+  }
 
   exports.Transaction = Transaction;
 
