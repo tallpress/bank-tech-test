@@ -14,10 +14,10 @@
     throw new Error("Insufficient funds");
   }
 
-  Printer.prototype.formatStatement = function(transactions) {
+  Printer.prototype.formatStatement = (transactions) => {
     var toPrint = "Date || Transaction type || Amount || Balance after \n"
-    for (var i = 0;  i < transactions.length; i++) {
-      var currentTransaction = transactions[i];
+    for (let i = 0;  i < transactions.length; i++) {
+      const currentTransaction = transactions[i];
       toPrint += `${currentTransaction.date} || ${currentTransaction.type} || ${formatMoney(currentTransaction.amount)} || ${formatMoney(currentTransaction.currentBalance)} \n`;
     }
     return toPrint;
